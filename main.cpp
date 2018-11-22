@@ -26,6 +26,10 @@ int main(int argc, const char * argv[])
         nums++;
     }
     myReadFile.close();
+
+    if (nums % 2) {
+        std::cout<<"nums are odd";
+    }
     
     avg = sum / nums;
     double* numArr = new double[nums];//makes dynamic array with the size depending on the amount of numbers
