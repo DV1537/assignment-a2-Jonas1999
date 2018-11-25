@@ -49,12 +49,12 @@ int main(int argc, const char * argv[])
     while (myReadFile >> a)
     {
         if(c % 2){
-            //Kör in i Y
+            //Adds to Y
             temp.setY(a);
             pntArr[p] = temp;
             p++;
         }else{
-            //Kör in i X
+            //Adds to X
             temp = Point(a,0);
         }
         c++;
