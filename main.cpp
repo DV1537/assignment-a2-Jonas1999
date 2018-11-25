@@ -1,5 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include "Shape.h"
+#include "Point.h"
+#include "Line.h"
+#include "Triangle.h"
+#include "Polygon.h"
 /**
  * The program reads numbers from a file and prints the sum of them
  * Example: main.exe ./tests/input.in
@@ -11,10 +16,13 @@ int main(int argc, const char * argv[])
 {
     
     double a = 0;//used for saving numbers
+    int c = 1;
+    int p = 0;
     int nums = 0;//used for counting the amount of numbers
-    int i = 0;
+    bool xyCordChecker = true;//used to check which coordinate array the current value of a should be set in
     double sum = 0;
-    double avg = 0;
+    int dotcount = 0;//amount of dots
+    int tempX, tempY = 0;
     
     std::ifstream myReadFile;
     
@@ -29,25 +37,30 @@ int main(int argc, const char * argv[])
 
     if (nums % 2) {
         std::cout<<"nums are odd";
+        throw;
     }
     
-    avg = sum / nums;
-    double* numArr = new double[nums];//makes dynamic array with the size depending on the amount of numbers
+    dotcount = nums / 2;
+    
+    Point* pntArr = new Point[dotcount];
+    Point temp;
+
     myReadFile.open(argv[1]);//re-opens the file to save the numbers in the dynamic array
     while (myReadFile >> a)
     {
-        numArr[i] = a;
-        i++;
-    }
-
-    for(int i = 0; i < nums; i++){//calculates and outputs the numbers that are above average
-        if(numArr[i] > avg){
-        std::cout << numArr[i]<<" ";
+        if(c % 2){
+            //Kör in i Y
+            temp.setY(a);
+            pntArr[p] = temp;
+            p++;
+        }else{
+            //Kör in i X
+            temp = Point(a,0);
         }
+        c++;
     }
 
     myReadFile.close();
-    
     return 0;
 }
 
