@@ -12,7 +12,7 @@ class Shape{
     std::string getType(int nums);//returns a string denoting type of a shape (point, line, polygon ..)
     double area();//returns area of the object, or -1 if the shape is concave, intersecting, or does not have an area
     double circumreference();//returns circumreference of the object
-    double position();//returns center coordinates of the object
+    Point position();//returns center coordinates of the object
     bool isConvex();//returns true if shape is convex
     double distance(Shape s);//returns distance to the center of another shape
     

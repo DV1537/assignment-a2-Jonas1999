@@ -61,6 +61,11 @@ int main(int argc, const char * argv[])
     }
 
     myReadFile.close();
+    
+    Shape basicShape(pntArr, dotcount);//debuggning
+    
+    std::cout << "Area: " << basicShape.area() << std::endl;
+
     return 0;
 }
 
