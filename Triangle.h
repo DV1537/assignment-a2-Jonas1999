@@ -7,7 +7,17 @@ class Triangle : public Shape
 {
     public: 
     Triangle();
-    Triangle(Point* d, int n);
-    Triangle(Point p1, Point p2, Point p3);
+    ~Triangle();
+    Triangle(Point* dots, int n);
+    Triangle(Point d1, Point d2, Point d3);
+    std::string getType();
+    double area();
+    double circumreference();
+    bool isConvex();
+    Point position();
+
+    private:
+    Point* d;
+    int nums;
 };
 #endif

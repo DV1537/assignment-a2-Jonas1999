@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+#include <string>
 #include <fstream>
 #include "Shape.h"
 #include "Point.h"
@@ -62,10 +64,20 @@ int main(int argc, const char * argv[])
 
     myReadFile.close();
     
-    Shape basicShape(pntArr, dotcount);//debuggning
+    Polygon basicShape(pntArr, dotcount);
     
     std::cout << "Area: " << basicShape.area() << std::endl;
+    std::cout << "Shape type: " << basicShape.getType() << std::endl;
+    std::cout << "Area size: " << basicShape.area() << std::endl;
+    std::cout << "Circumference: " << basicShape.circumreference() << std::endl;
+    std::cout << "Center point: " << basicShape.position().getX() << ", " << basicShape.position().getY() << std::endl;
+    if (basicShape.isConvex() == true){
+        std::cout << "The shape is convex" << std::endl;
+    }
+    else if (basicShape.isConvex() == false){
+        std::cout << "The shape isn't convex" << std::endl;
+    }
+    
 
     return 0;
 }
-

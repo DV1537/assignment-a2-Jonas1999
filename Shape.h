@@ -6,25 +6,12 @@
 
 class Shape{
     public:
-    Shape(Point* d, int n);
-    Shape();
-    int nums = 0;
-    std::string getType(int nums);//returns a string denoting type of a shape (point, line, polygon ..)
-    double area();//returns area of the object, or -1 if the shape is concave, intersecting, or does not have an area
-    double circumreference();//returns circumreference of the object
-    Point position();//returns center coordinates of the object
-    bool isConvex();//returns true if shape is convex
-    double distance(Shape s);//returns distance to the center of another shape
-    
-    Point* getDots();
-    void setDots(Point* dots);
-    int getNums();
-    void setNums(int nums);
-
-    private:
-    Point* dots;
-    int n;
-
+    virtual std::string getType() = 0;//returns a string denoting type of a shape (point, line, polygon ..)
+    virtual double area() = 0;//returns area of the object, or -1 if the shape is concave, intersecting, or does not have an area
+    virtual double circumreference() = 0;//returns circumreference of the object, default is 0
+    virtual Point position() = 0;//returns center coordinates of the object
+    virtual bool isConvex() = 0;//returns true if shape is convex, default is 0
+    double distance(Shape& distcal);//returns distance to the center of another shape
 };
 
 #endif
