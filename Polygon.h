@@ -13,7 +13,7 @@ class Polygon: public Shape{
         bool isConvex();
         Point position();
 
-    private://might change
+    private:
     Point* d;
     int nums;
 };
