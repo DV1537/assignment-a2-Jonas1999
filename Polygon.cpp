@@ -27,7 +27,7 @@ double Polygon::area(){
         for (int c = 0; c < n; c++) {
 		    int dotAfter = 0, dotBefore = 0;//the dot value before and after the current dot
 		    if (c == 0) {//the dot is first in the list
-		    	dotAfter = c - 1;
+		    	dotAfter = nums - 1;
 		    	dotBefore = 1;
 		    } 
             else if (c == n - 1) {//the dot is in the end of the list
